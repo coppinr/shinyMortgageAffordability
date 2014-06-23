@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 library(UsingR)
 #source("http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/mortgage.R")
 shinyServer(
@@ -33,6 +32,3 @@ shinyServer(
     })  
   }
 )
-=======
- 
->>>>>>> b90ca874138b68c51e4493cc254eca9185871714
