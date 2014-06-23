@@ -5,7 +5,7 @@ shinyServer(
     
     loan_amount <- reactive(input$total_cost-input$down_payment)
     down_percent <- reactive(input$down_payment/input$total_cost)
-    output$text1 <- renderText({paste("Your down payment of $", input$down_payment," represents ", round(down_percent()*100,2), "% of the purchase price, and leaves you needing a total loan of $", prettyNum(loan_amount()*1000, scientific=FALSE, big.mark=","), ".\n", sep="")})
+    output$text1 <- renderText({paste("Your down payment of $", prettyNum(input$down_payment*1000, big.mark=",")," represents ", round(down_percent()*100,2), "% of the purchase price, and leaves you needing a total loan of $", prettyNum(loan_amount()*1000, scientific=FALSE, big.mark=","), ".\n", sep="")})
 #    P <- reactive(loan_amount)()
 #    i <- reactive(input$interest_rate)()
 #    n <- reactive(input$mortgage_term)()
