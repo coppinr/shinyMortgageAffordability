@@ -22,7 +22,7 @@ shinyServer(
         })
     })
     output$chart1 <- renderPlot({
-      colour <- c("grey", "grey", "grey", "black")
+      colour <- c("grey", "grey", "grey", "yellow")
       if (input$monthly_income < input$monthly_expenses + monthly_housing()) {
         colour <- c("grey", "grey", "grey", "red")
       }
