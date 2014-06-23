@@ -20,7 +20,7 @@ shinyUI(pageWithSidebar(
     
     #Mortgage information
     h4("The mortgage"),
-    numericInput("interest_rate", "Interest rate (%)", 3.00, min=0),
+    numericInput("interest_rate", "Interest rate (%)", 3.04, min=0),
     helpText("Start at the current prime rate if you don't know what your bank will offer you. We are going to assume semi-anual compounding"),
 
     sliderInput('mortgage_term', 'Term (years)',value = 25, min = 5, max = 35, step = 5),

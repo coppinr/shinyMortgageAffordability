@@ -15,7 +15,7 @@ shinyServer(
     #monthly_payment <- reactive((input$total_cost-input$down_payment)*(((1+input$interest_rate/200)^(1/6)-1))/(1-(((1+input$interest_rate/200)^(1/6)))^-(input$mortgage_term*12)))
     monthly_payment <- reactive((input$total_cost-input$down_payment)*1000*(((1+input$interest_rate/200)^(1/6)-1))/(1-(((1+input$interest_rate/200)^(1/6)))^-(input$mortgage_term*12)))
     monthly_housing <- reactive(monthly_payment() + input$property_tax/12 + input$strata_fee)
-    output$text2 <- renderText({paste("You can afford a monthly payment of up to $", prettyNum(input$monthly_income-input$monthly_expenses, scientific=FALSE, big.mark=","), " and under the current terms (",input$mortgage_term," years and interest rate of",input$interest_rate,"%), your monthly housing cost (mortgage payment of $", prettyNum(round(monthly_payment()), big.mark=","), " plus property tax and strata fees) is roughly $", prettyNum(round(monthly_housing()), big.mark=","), ".", sep="")})
+    output$text2 <- renderText({paste("You can afford a monthly payment of up to $", prettyNum(input$monthly_income-input$monthly_expenses, scientific=FALSE, big.mark=","), " and under the current terms (",input$mortgage_term," years and interest rate of ",input$interest_rate,"%), your monthly housing cost (mortgage payment of $", prettyNum(round(monthly_payment()), big.mark=","), " plus property tax and strata fees) is roughly $", prettyNum(round(monthly_housing()), big.mark=","), ".", sep="")})
     output$text3 <- renderUI({em(
       if (down_percent() < 0.2){
         paste("Note: As your down payment is less than 20% of the purchase price, you will have to pay an additional CMHC premium if this purchase is in Canada.")
